@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teamvs Team</h1>
+    <form action="/teamvteam" method="get">
+    <label >Team1</label>
+    <select name="team1" >
+        {% for i in teams %}
+        <option >{{i}}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <br>
+    <label >Team2</label>
+    <select name="team2" >
+        {% for i in teams %}
+        <option >{{i}}</option>
+        {% endfor %}
+    </select>
+
+    <br>
+    <br>
+    <button type="submit">find track record</button>
+    </form>
+{% if res %}
+
+{% for i in res %}
+<p>{{i}}:{{res[i]}}</p>
+{% endfor %}
+{% endif %}
+
+</body>
+</html>
